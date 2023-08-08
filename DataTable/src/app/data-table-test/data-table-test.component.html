@@ -1,0 +1,12 @@
+<table datatable [dtOptions]="dtOptions" id="example" class="row-border hover">
+   
+    <tfoot *ngIf="columnFilter">
+        <tr>
+          <th><input #div type="text" placeholder="Search ID" name="search-Id"/></th>
+          <th><input #div type="text" placeholder="Search Name" name="search-name"/></th>
+          <th><input #div type="text" placeholder="Search Message" name="search-message"/></th>
+    
+        </tr>
+      </tfoot>
+</table>
+<button #demoNg (click)="clickData(2)">click</button>

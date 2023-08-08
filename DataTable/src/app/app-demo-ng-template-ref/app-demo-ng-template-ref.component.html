@@ -1,0 +1,50 @@
+<table datatable [dtOptions]="dtOptions" id="#table" class="row-border hover">
+  <thead class="tg" appTest>
+    <tr class="sorting">
+      <th id="1">ID</th>
+      <th id="2">First name</th>
+      <th id="3">Last name</th>
+    </tr>
+    <tr>
+      <th class="nosort 1" id="1">
+        <input
+          id="ss"
+          type="text"
+          placeholder="Search Message"
+          name="search-message"
+        />
+      </th>
+      <th class="nosort 2" id="2">
+        <input
+          id="ss"
+          type="text"
+          placeholder="Search Name"
+          name="search-name"
+        />
+      </th>
+      <th class="nosort 3" id="3">
+        <select id="ss">
+          <option *ngFor="let country of [2, 3, 4]">
+            {{ country }}
+          </option>
+        </select>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody *ngIf="persons?.length != 0">
+    <tr *ngFor="let person of persons">
+      <td *ngFor="let data of person | keyvalue : keepOrder">
+        {{ data.value }}
+      </td>
+      <!-- <td><button (click)="clickData(person.id)">{{ person.id }}</button></td>
+        <td>{{ person.firstName }}</td>
+        <td>{{ person.lastName }}</td> -->
+    </tr>
+  </tbody>
+  <tbody *ngIf="persons?.length == 0">
+    <tr>
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  </tbody>
+</table>
